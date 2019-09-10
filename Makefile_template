@@ -1,0 +1,13 @@
+OBJECTS := $(basename $(SOURCES))
+CFLAGS := -std=c++11
+
+all:
+	@-make $(OBJECTS)
+
+%:%.cc
+	g++ $< -o $@.o $(CFLAGS)
+
+.PHONY: clean
+clean:
+	-rm $(OBJECTS).o 
+	@-rm -r *.dSYM

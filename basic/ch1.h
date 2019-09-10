@@ -1,0 +1,1 @@
+const int const_int2 = 10;
