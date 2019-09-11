@@ -30,6 +30,7 @@ int main() {
     auto pre = 0;
     for (int i = 1; i != buf.size(); ++i) {
       if (buf[i].begin < buf[pre].end) {
+        // overlap
         ++ans;
         // 删去 end 比较大的那一个
         if (buf[i].end < buf[pre].end) {

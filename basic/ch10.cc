@@ -1,10 +1,10 @@
+#include "util.h"
 #include <iostream>
 #include <map>
 #include <set>
 #include <string>
 #include <utility>
 #include <vector>
-#include "util.h"
 
 using namespace std;
 
@@ -99,13 +99,13 @@ void fun4() {
   vector<int> ivec;
   for (vector<int>::size_type i = 0; i != 10; ++i) {
     ivec.push_back((int)i);
-    ivec.push_back(int(i));  // duplicate copies of each number
+    ivec.push_back(int(i)); // duplicate copies of each number
   }
   // iset holds unique elements from ivec
   set<int> iset(ivec.begin(), ivec.end());
   iset.insert(ivec.begin(), ivec.end());
-  cout << "ivec.size():\t" << ivec.size() << endl;  // prints 20
-  cout << "iset.size():\t" << iset.size() << endl;  // prints 10
+  cout << "ivec.size():\t" << ivec.size() << endl; // prints 20
+  cout << "iset.size():\t" << iset.size() << endl; // prints 10
 
   iset.insert(10);
 
@@ -113,7 +113,8 @@ void fun4() {
   // 不可以使用下标
   auto a = iset.find(10);
   // 迭代器只可读
-  if (a != iset.end()) cout << *a << endl;
+  if (a != iset.end())
+    cout << *a << endl;
 
   info("iset.count(10)");
   size_t count = iset.count(10);
@@ -130,6 +131,7 @@ void fun5() {
       make_pair(string("Barth, John"), string("Lost in the Funhouse")));
 
   info("Iteraion 1, iter = find(); ++iter;");
+
   multimap<string, string>::iterator iter = authors.find("Barth, John");
   multimap<string, string>::size_type entries = authors.count("Barth, John");
 
@@ -141,6 +143,7 @@ void fun5() {
   auto beg = authors.lower_bound("Barth, John");
   auto end = authors.upper_bound("Barth, John");
 
+  cout << "first:" << beg->first << endl;
   while (beg != end) {
     cout << beg->second << endl;
     ++beg;
@@ -164,6 +167,6 @@ int main(int argc, const char *argv[]) {
   title("10.4 set");
   fun4();
   title("10.5 multimap, multiset");
-  fun5();  //
+  fun5(); //
   return 0;
 }
