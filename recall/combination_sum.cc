@@ -2,7 +2,7 @@
  * @Description: leetcode 37
  * @Author: Chiale
  * @Date: 2019-09-11 13:30:33
- * @LastEditTime: 2019-09-11 13:30:36
+ * @LastEditTime: 2019-09-13 13:19:14
  */
 
 #include <iostream>
@@ -20,14 +20,32 @@ void combinationSum(vector<int> &buf, int m, int begin) {
   }
   for (int i = begin; i < buf.size(); ++i) {
     for (int j = 1; j * buf[i] <= m; ++j) {
+      // push k times
       for (int k = 1; k <= j; ++k) {
         cur.push_back(buf[i]);
       }
       combinationSum(buf, m - buf[i] * j, i + 1);
+      // pop k times accordingly
       for (int k = 1; k <= j; ++k) {
         cur.pop_back();
       }
     }
+  }
+}
+
+void printSum() {
+  for (auto i : ans) {
+    bool start = true;
+    for (auto j : i) {
+      if (start) {
+        start = false;
+        cout << "[";
+      } else {
+        cout << " ";
+      }
+      cout << j;
+    }
+    cout << "]" << endl;
   }
 }
 
@@ -43,18 +61,6 @@ int main() {
       buf.push_back(tmp);
     }
     combinationSum(buf, m, 0);
-    for (auto i : ans) {
-      bool start = true;
-      for (auto j : i) {
-        if (start) {
-          start = false;
-          cout << "[";
-        } else {
-          cout << " ";
-        }
-        cout << j;
-      }
-      cout << "]" << endl;
-    }
+    printSum();
   }
 }
