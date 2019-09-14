@@ -1,8 +1,8 @@
 /*
- * @Description: leetcode 174
+ * @Description: leetcode 174 特点是从图的右下角开始遍历
  * @Author: Chiale
  * @Date: 2019-09-14 15:20:18
- * @LastEditTime: 2019-09-14 15:48:11
+ * @LastEditTime: 2019-09-14 16:32:55
  */
 
 #include <iostream>

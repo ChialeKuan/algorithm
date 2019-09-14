@@ -9,5 +9,5 @@ all:
 
 .PHONY: clean
 clean:
-	-@rm $(OBJECTS).o 
+	-rm *.o 
 	@-rm -r *.dSYM
