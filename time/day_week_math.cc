@@ -19,7 +19,7 @@ int main() {
   int w;
   char s[20];
   while (scanf("%d%s%2d%2d", &d, s, &c, &y) != EOF) {
-    for (m = 0; m != 12; m++) {
+    for (m = 0; m != 12; ++m) {
       if (strcmp(s, monthName[m]) == 0) {
         break;  //将输入字符串与月名比较得出月数
       }
@@ -28,7 +28,7 @@ int main() {
     w = 0;
     w += floor(c / 4.0) - 2 * c;
     w += floor(y / 4.0) + y;
-    w += floor(26 * (m + 1) / 10);
+    w += floor(13 * (m + 1) / 5);
     w += d - 1;
     cout << weekName[w % 7] << endl;
     //将计算后得出的下标用7对其取模,并

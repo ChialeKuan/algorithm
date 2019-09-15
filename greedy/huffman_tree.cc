@@ -5,6 +5,7 @@ using namespace std;
 
 // 最小堆
 priority_queue<int, vector<int>, greater<int>> q;
+
 int main(int argc, const char* argv[]) {
   int n;
   while (cin >> n) {

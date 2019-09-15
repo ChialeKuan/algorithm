@@ -15,14 +15,15 @@ double fun(double num_1, double num_2, char str) {
 double calculate(string s) {
   stack<double> num;
   stack<char> str;
+
   for (int i = 0; i != s.size(); ++i) {
     // blank
     if (' ' == s[i]) continue;
     // number
-    if (s[i] <= '9' && s[i] >= '0') {
+    if (isdigit(s[i])) {
       int temp = s[i] - '0';
       int j;
-      for (j = i + 1; j != s.size() && '0' <= s[j] && s[j] <= '9'; ++j)
+      for (j = i + 1; j != s.size() && isdigit(s[j]); ++j)
         temp = temp * 10 + (s[j] - '0');
       i = j - 1;
       num.push(temp);

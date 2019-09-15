@@ -16,6 +16,7 @@ int main(int argc, const char* argv[]) {
   int n;
   Goods item;
   vector<Goods> record;
+
   while (cin >> m >> n) {
     if (m == -1 && n == -1) break;
     record.clear();
@@ -25,9 +26,9 @@ int main(int argc, const char* argv[]) {
       record.push_back(item);
     }
     sort(record.begin(), record.end());
-    int idx = 0;
     double ans = 0;
-    while (m > 0 && idx != n) {
+    for(int idx = 0; idx != n; ++idx) {
+      if (m <= 0)break;
       if (m > record[idx].f) {
         ans += record[idx].j;
         m -= record[idx].f;
@@ -36,7 +37,7 @@ int main(int argc, const char* argv[]) {
         m = 0;
         break;
       }
-      idx++;
+      
     }
     cout << fixed << setprecision(3) << ans << endl;
   }
