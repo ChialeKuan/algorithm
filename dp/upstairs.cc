@@ -1,6 +1,7 @@
 #include <iostream>
 #define MAX 100
 using namespace std;
+
 __int64_t fib[MAX];
 int main(int argc, const char* argv[]) {
   int n;

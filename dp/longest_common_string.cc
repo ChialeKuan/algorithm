@@ -2,7 +2,7 @@
  * @Description: Longest Common String
  * @Author: Chiale
  * @Date: 2019-09-07 20:14:07
- * @LastEditTime: 2019-09-08 09:08:54
+ * @LastEditTime: 2019-09-15 13:44:59
  */
 
 #include <iostream>
@@ -16,7 +16,7 @@ int dp[MAX + 1][MAX + 1];
 int main(int argc, const char* argv[]) {
   string a, b;
   while (cin >> a >> b) {
-    if (!a.size() || !b.size()) {
+    if (a.empty() || b.empty()) {
       cout << 0 << endl;
       continue;
     }

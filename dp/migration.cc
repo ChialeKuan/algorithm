@@ -4,12 +4,13 @@
  * try to print the minimum of 2k things;
  * @Author: Chiale
  * @Date: 2019-09-08 08:52:43
- * @LastEditTime: 2019-09-08 09:55:41
+ * @LastEditTime: 2019-09-15 14:51:41
  */
 
 #include <iostream>
 #include <vector>
 #define MAX 1000
+#define INF 0x7fffffff
 
 using namespace std;
 
@@ -38,11 +39,11 @@ int main(int argc, const char *argv[]) {
       for (int j = 2 * i; j != n + 1; ++j) {
         // 注意不能直接转移,j 要从 2i 开始，从 1 开始就相当于可以不装了
         if (j != 2 * i) {
-          // 可以从前面的结果狄忒
+          // 可以从前面的结果递归
           dp[i][j] = dp[i][j - 1];
         } else {
           // 一定要选
-          dp[i][j] = INT32_MAX / 2;
+          dp[i][j] = INF;
         }
         choose = dp[i - 1][j - 2];
         choose += (buf[j] - buf[j - 1]) * (buf[j] - buf[j - 1]);

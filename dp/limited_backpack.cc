@@ -20,8 +20,8 @@ int main(int argc, const char* argv[]) {
     Item item;
     vector<Item> items;
     // 第 0 项先装进去
-    items.push_back(item);
-
+    // items.push_back(item);
+    // 分拆
     for (int i = 0; i != n; ++i) {
       cin >> w >> v >> c;
       base = 1;
@@ -39,7 +39,7 @@ int main(int argc, const char* argv[]) {
     for (int i = 0; i != n; ++i) {
       dp[i] = 0;
     }
-    for (int i = 1; i != items.size(); ++i) {
+    for (int i = 0; i != items.size(); ++i) {
       for (int j = volume; j >= items[i].w; --j) {
         if (dp[j] < dp[j - items[i].w] + items[i].v) {
           dp[j] = dp[j - items[i].w] + items[i].v;

@@ -7,8 +7,8 @@ __int64_t F[MAX];
 // _n is in box n
 // n is in box x
 
-// F[i-1] _n!=x
-// F[i-2] _n==x
+// F[i-1] _n != x
+// F[i-2] _n == x
 
 int main(int argc, const char* argv[]) {
   F[1] = 0;
