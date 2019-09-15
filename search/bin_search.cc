@@ -1,3 +1,10 @@
+/*
+ * @Description: 一个二分搜索，根据学号作为索引
+ * @Author: Chiale
+ * @Date: 2019-09-03 22:10:55
+ * @LastEditTime: 2019-09-15 09:08:53
+ */
+
 #include <algorithm>
 #include <iostream>
 #include <string>

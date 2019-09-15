@@ -1,3 +1,10 @@
+/*
+ * @Description: generate the post order from pre & in order
+ * @Author: Chiale
+ * @Date: 2019-09-04 16:04:07
+ * @LastEditTime: 2019-09-15 09:15:57
+ */
+
 #include <iostream>
 #include <string>
 

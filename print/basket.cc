@@ -1,3 +1,10 @@
+/*
+ * @Description: 输出一个框
+ * @Author: Chiale
+ * @Date: 2019-09-03 21:30:07
+ * @LastEditTime: 2019-09-15 09:07:11
+ */
+
 #include <iostream>
 
 using namespace std;
@@ -27,6 +34,7 @@ int main() {
         buf[i][n - loop - 1] = c;
       }
     }
+    // 角落的空格
     if (n > 1) {
       buf[0][0] = buf[0][n - 1] = buf[n - 1][0] = buf[n - 1][n - 1] = ' ';
     }
