@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#define INF 0x7fffffff
+
 using namespace std;
 
 struct Edge {
@@ -30,7 +32,7 @@ int main(int argc, const char *argv[]) {
     for (int i = 0; i != n; ++i) {
       Node n;
       n.mark = false;
-      n.dist = INT16_MAX;
+      n.dist = INF;
       n.last = -1;
       nodes.push_back(n);
     }
@@ -47,15 +49,11 @@ int main(int argc, const char *argv[]) {
       nodes[b].table.push_back(e);
     }
 
-    for (auto i : nodes) {
-      i.dist = INT16_MAX;
-      i.mark = false;
-    }
     nodes[0].dist = 0;
     nodes[0].mark = true;
     opt = 0;
     for (int j = 0; j != n - 1; ++j) {
-      dist = INT16_MAX;
+      dist = INF;
       // finding smallest
       for (int i = 0; i != n; ++i) {
         if (nodes[i].mark == false && nodes[i].dist < dist) {

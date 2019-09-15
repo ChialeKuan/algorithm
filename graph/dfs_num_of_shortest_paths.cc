@@ -1,8 +1,8 @@
 /*
- * @Description: PAT 1004
+ * @Description: PAT 1003 回溯法
  * @Author: Chiale
  * @Date: 2019-09-09 10:05:22
- * @LastEditTime: 2019-09-09 10:07:08
+ * @LastEditTime: 2019-09-15 15:51:48
  */
 
 #include <iostream>
@@ -21,7 +21,7 @@ struct Node {
   vector<Edge> table;
   int t;
   bool mark;
-  int n;
+  int n; // fireman count
 };
 
 int min_time_cnt;
@@ -62,6 +62,7 @@ int main() {
 
   node.t = INF;
   node.mark = false;
+  // fireman num
   for (int i = 0; i != n; ++i) {
     cin >> node.n;
     nodes.push_back(node);

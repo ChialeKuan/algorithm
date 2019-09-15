@@ -2,11 +2,13 @@
  * @Description: n m (a,b,c)
  * @Author: Chiale
  * @Date: 2019-09-06 14:18:25
- * @LastEditTime: 2019-09-06 14:38:57
+ * @LastEditTime: 2019-09-15 16:09:34
  */
 
 #include <iostream>
 #include <vector>
+#define INF 0x7fffffff
+
 using namespace std;
 
 int main(int argc, const char* argv[]) {
@@ -17,7 +19,7 @@ int main(int argc, const char* argv[]) {
   while (cin >> n >> m) {
     vec.clear();
     buf.clear();
-    for (int i = 0; i != n; ++i) vec.push_back(INT16_MAX);
+    for (int i = 0; i != n; ++i) vec.push_back(INF);
     for (int i = 0; i != n; ++i) buf.push_back(vec);
     for (int i = 0; i != m; ++i) {
       cin >> a >> b >> c;

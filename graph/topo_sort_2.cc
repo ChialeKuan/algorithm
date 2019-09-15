@@ -49,8 +49,7 @@ bool check_topo(vector<Node> &nodes) {
       }
     }
   }
-  if (cnt == nodes.size()) return true;
-  return false;
+  return cnt == nodes.size()
 }
 
 int main(int argc, const char *argv[]) {

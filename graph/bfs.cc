@@ -2,12 +2,13 @@
  * @Description: get out before time t
  * @Author: Chiale
  * @Date: 2019-09-07 09:35:55
- * @LastEditTime: 2019-09-07 18:49:14
+ * @LastEditTime: 2019-09-15 15:26:04
  */
 
 #include <iostream>
 #include <queue>
 #include <vector>
+
 using namespace std;
 
 struct node {
@@ -29,7 +30,9 @@ int BFS(int a, int b, int c) {
   n.y = 0;
   n.z = 0;
   n.t = 0;
+  // 初试压入第一个元素
   q.push(n);
+  // 后面只要不空就好
   while (!q.empty()) {
     n = q.front();
     q.pop();
