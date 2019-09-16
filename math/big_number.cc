@@ -1,3 +1,10 @@
+/*
+ * @Description: 大数加法
+ * @Author: Chiale
+ * @Date: 2019-09-05 18:54:47
+ * @LastEditTime: 2019-09-16 08:15:53
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,6 +27,7 @@ int main(int argc, const char* argv[]) {
     for (auto i = n.rbegin(); i != n.rend(); ++i) {
       n_v.push_back(*i - '0');
     }
+    
     for (int i = 0; i < m_v.size() || i < n_v.size(); ++i) {
       temp = carry;
       if (i < m_v.size()) {

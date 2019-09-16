@@ -22,8 +22,7 @@ int main(int argc, const char* argv[]) {
   while (cin >> n) {
     bool first = true;
     while (n > 1) {
-      auto i = primes.begin();
-      for (; i != primes.end(); ++i) {
+      for (auto i = primes.begin(); i != primes.end(); ++i) {
         if (!(n % *i)) {
           n /= *i;
           if (first)

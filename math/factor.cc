@@ -2,12 +2,11 @@
  * @Description: a^b last three digits
  * @Author: Chiale
  * @Date: 2019-09-05 16:48:35
- * @LastEditTime: 2019-09-05 18:47:56
+ * @LastEditTime: 2019-09-16 08:37:11
  */
 
 #include <bitset>
 #include <iostream>
-#include <vector>
 
 #define MAX 128
 
