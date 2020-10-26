@@ -4,14 +4,12 @@
 
 struct Quad {
     Quad();
-    Quad(int n, char a, char b, char c) : _n(n), _x(a), _y(b), _z(c) {
-    }
-    int _n; 		// ÒªÒÆ¶¯µÄÅÌ×ÓÊıÁ¿
-    char _x, _y, _z; 	// ±£´æÖù×ÓÃû³Æ
-}; // ±£´æµ±Ç°×´Ì¬
+    Quad(int n, char a, char b, char c) : _n(n), _x(a), _y(b), _z(c) {}
+    int _n;           // è¦ç§»åŠ¨çš„ç›˜å­æ•°é‡
+    char _x, _y, _z;  // ä¿å­˜æŸ±å­åç§°
+};                    // ä¿å­˜å½“å‰çŠ¶æ€
 
-void hanoi(int n, char x, char y, char z)
-{
+void hanoi(int n, char x, char y, char z) {
     std::stack<Quad> s;
     s.push(Quad(n, x, y, z));
     while (!s.empty()) {
@@ -21,11 +19,10 @@ void hanoi(int n, char x, char y, char z)
         x = q._x;
         y = q._y;
         z = q._z;
-        if (n == 1) {// µ¥¸öµÄ½áÊøÌõ¼ş
+        if (n == 1) {  // å•ä¸ªçš„ç»“æŸæ¡ä»¶
             std::cout << q._x << "-> " << q._z << std::endl;
-        }
-        else {
-            // »¹¿ÉÒÔ¸üĞ¡
+        } else {
+            // è¿˜å¯ä»¥æ›´å°
             s.push(Quad(n - 1, y, x, z));
             s.push(Quad(1, x, y, z));
             s.push(Quad(n - 1, x, z, y));
@@ -33,6 +30,4 @@ void hanoi(int n, char x, char y, char z)
     }
 }
 
-void a2() {
-    hanoi(3, 'A', 'B', 'C');
-}
+void a2() { hanoi(3, 'A', 'B', 'C'); }
