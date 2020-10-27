@@ -2,12 +2,12 @@
  * @Description: leetcode 174 特点是从图的右下角开始遍历
  * @Author: Chiale
  * @Date: 2019-09-14 15:20:18
- * @LastEditTime: 2019-09-14 16:32:55
+ * @LastEditTime: 2020-10-27 14:14:03
  */
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 #define MAX 0x7fffffff
 
@@ -32,8 +32,8 @@ int main() {
         vector<vector<int> > dp(m + 1, vector<int>(n + 1, MAX));
         // 终点是 (m-1, n-1)
         dp[m][n - 1] = dp[m - 1][n] = 1;
-        for (int i = m - 1; i>=0; --i) {
-            for (int j = n - 1; j>=0; --j) {
+        for (int i = m - 1; i >= 0; --i) {
+            for (int j = n - 1; j >= 0; --j) {
                 int future = min(dp[i + 1][j], dp[i][j + 1]);
                 int need = future - buf[i][j];
                 if (need > 0) {

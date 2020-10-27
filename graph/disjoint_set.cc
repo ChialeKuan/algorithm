@@ -16,30 +16,30 @@ using namespace std;
 int tree[N];
 
 int findRoot(int x) {
-  if (tree[x] == -1) return x;
-  int tmp = findRoot(tree[x]);
-  tree[x] = tmp;
-  return tmp;
+    if (tree[x] == -1) return x;
+    int tmp = findRoot(tree[x]);
+    tree[x] = tmp;
+    return tmp;
 }
 
 int main(int argc, const char* argv[]) {
-  int ans;
-  int n, m;
-  int a, b;
-  while (cin >> n >> m) {
-    ans = 0;
-    for (int i = 1; i != n + 1; ++i) tree[i] = -1;
-    for (int i = 0; i != m; ++i) {
-      cin >> a >> b;
-      a = findRoot(a);
-      b = findRoot(b);
-      if (a != b) tree[a] = b;
+    int ans;
+    int n, m;
+    int a, b;
+    while (cin >> n >> m) {
+        ans = 0;
+        for (int i = 1; i != n + 1; ++i) tree[i] = -1;
+        for (int i = 0; i != m; ++i) {
+            cin >> a >> b;
+            a = findRoot(a);
+            b = findRoot(b);
+            if (a != b) tree[a] = b;
+        }
+        for (int i = 1; i != n + 1; ++i) {
+            if (tree[i] == -1) ++ans;
+        }
+        cout << ans - 1 << endl;
     }
-    for (int i = 1; i != n + 1; ++i) {
-      if (tree[i] == -1) ++ans;
-    }
-    cout << ans - 1 << endl;
-  }
 
-  return 0;
+    return 0;
 }

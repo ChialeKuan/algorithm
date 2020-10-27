@@ -2,13 +2,13 @@
  * @Description: leetcode 644 len >= k
  * @Author: Chiale
  * @Date: 2019-09-14 13:31:50
- * @LastEditTime: 2019-09-14 13:43:50
+ * @LastEditTime: 2020-10-27 14:15:21
  */
 
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 

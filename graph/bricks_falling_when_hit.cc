@@ -5,8 +5,8 @@
  * @LastEditTime: 2019-09-14 14:43:59
  */
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -15,9 +15,7 @@ vector<vector<bool> > grid;
 
 struct DisjointSet {
     vector<int> sets;
-    DisjointSet(int num) {
-        sets = vector<int>(num, -1);
-    }
+    DisjointSet(int num) { sets = vector<int>(num, -1); }
 
     int Find(int x) {
         if (sets[x] < 0) return x;
@@ -38,9 +36,7 @@ struct DisjointSet {
         }
     }
 
-    int getNum(int x) {
-        return -sets[Find(x)];
-    }
+    int getNum(int x) { return -sets[Find(x)]; }
 };
 
 int hitBricks(int x, int y) {

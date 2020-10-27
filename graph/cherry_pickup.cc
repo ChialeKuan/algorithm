@@ -2,12 +2,12 @@
  * @Description: leetcode 741
  * @Author: Chiale
  * @Date: 2019-09-14 16:27:43
- * @LastEditTime: 2019-09-14 16:30:54
+ * @LastEditTime: 2020-10-27 14:13:38
  */
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 #define MAX 50
 using namespace std;
@@ -42,10 +42,14 @@ int main() {
                     // note -1 is not walkable
                     int previous = -1;
                     // not border
-                    if (j > 0 && i - k > 0) previous = max(previous, dp[i - 1][j - 1][k]);
-                    if (k > 0 && i - j > 0) previous = max(previous, dp[i - 1][j][k - 1]);
-                    if (j > 0 && k > 0) previous = max(previous, dp[i - 1][j - 1][k - 1]);
-                    if (i - j > 0 && i - k > 0) previous = max(previous, dp[i - 1][j ][k ]);
+                    if (j > 0 && i - k > 0)
+                        previous = max(previous, dp[i - 1][j - 1][k]);
+                    if (k > 0 && i - j > 0)
+                        previous = max(previous, dp[i - 1][j][k - 1]);
+                    if (j > 0 && k > 0)
+                        previous = max(previous, dp[i - 1][j - 1][k - 1]);
+                    if (i - j > 0 && i - k > 0)
+                        previous = max(previous, dp[i - 1][j][k]);
                     if (previous >= 0) {
                         dp[i][j][k] = previous + grid[j][i - j];
                         if (j != k) dp[i][j][k] += grid[i][i - k];
