@@ -1,8 +1,10 @@
-# EXCLUDE_DIRS = ./.vscode
+EXCLUDE_DIRS = ./.vscode
 # DIRS := $(shell find . -depth 1 -type d)
 # DIRS := $(basename $(patsubst ./%,%,$(DIRS)))
-# DIRS := $(filter-out $(EXCLUDE_DIRS),$(DIRS))
+
 DIRS := $(wildcard */)
+DIRS := $(filter-out $(EXCLUDE_DIRS),$(DIRS))
+
 
 all:
 	@for var in $(DIRS); do \
